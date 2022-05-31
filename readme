@@ -1,0 +1,30 @@
+oauth2gmail
+
+These three scripts are intended to enable easy access to the refresh
+and access tokens for an application to use.  This enables oauth2 access
+to gmail with desktop clients, without requiring python.
+
+To enable these scripts to work, you must have your client_id and
+client_secret from your project at:
+
+https://console.developers.google.com/
+
+This project must have the gmail API enabled, and credentials generated.
+
+The client_id should go in a file called 'client_id' in this directory.
+Likewise, the client_secret should go in a file named 'client_secret'
+also in this directory.
+
+auth.sh
+This script generates a link to visit for you to generate an auth code,
+proving this is desired access.
+
+token.sh
+This script generates a refresh token.  This is effectively the equivalent
+of a password, together with your client_id and client_secret.
+
+refresh.sh
+This script generates an access token and it's expiration time in seconds.
+This is what is actually used to access gmail, and must be refreshed
+after expiration.  The first line of 'access_token.sh' contains the
+access token, and the second line contains the seconds until expiration.
